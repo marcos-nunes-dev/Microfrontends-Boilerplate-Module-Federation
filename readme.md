@@ -1,7 +1,7 @@
 
 <div align="center">
     <img src="#" width="300px" />
-    <h1><b>Module Federation Boilerplate</b></h1>
+    <h1><b>Module Federation Boilerplatea</b></h1>
 </div>
 
 

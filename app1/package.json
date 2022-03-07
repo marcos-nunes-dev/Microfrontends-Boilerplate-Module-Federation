@@ -11,11 +11,15 @@
     "lint": "yarn run eslint --fix src",
     "format": "yarn prettier --check \"**/*.{ts,tsx,yml,html,css,json,md}\"",
     "test": "react-scripts test",
-    "test:coverage": "yarn run test --watchAll=false --coverage --passWithNoTests"
+    "test:coverage": "yarn run test --watchAll=false --coverage --passWithNoTests",
+    "prepare": "cd .. && husky install app1/.husky",
+    "checkTs": "tsc --project tsconfig.lint.json"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "yarn run eslint --fix"
+      "yarn run eslint --fix",
+      "yarn lint",
+      "yarn test"
     ],
     "*.{md,json}": [
       "yarn prettier --check \"**/*.{ts,tsx,yml,html,css,json,md}\""
@@ -60,6 +64,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^4.0.0",
     "babel-loader": "8.2.3",
+    "devmoji": "^2.3.0",
     "eslint": "^7.5.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-react-app": "^6.0.0",
@@ -71,7 +76,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "html-webpack-plugin": "5.5.0",
-    "husky": "7.0.4",
+    "husky": "^7.0.4",
     "jest-styled-components": "7.0.8",
     "lint-staged": "12.1.7",
     "prettier": "2.5.1",
