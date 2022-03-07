@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import * as React from "react";
-
-const style = { border: "1px solid #000", padding: 12 };
+import * as S from "./styles";
 
 const Navigation = () => (
-  <div style={style}>
+  <S.Wrapper>
     <Link to="/">Home</Link> - <Link to="/about">About</Link>
-  </div>
+  </S.Wrapper>
 );
 
 export default Navigation;

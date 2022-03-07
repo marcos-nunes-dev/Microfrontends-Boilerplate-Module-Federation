@@ -2,26 +2,35 @@
   "name": "@typescript/app1",
   "version": "0.0.0",
   "private": true,
-  "devDependencies": {
-    "@babel/core": "7.17.5",
-    "@babel/preset-react": "7.16.7",
-    "@babel/preset-typescript": "7.16.7",
-    "@types/react": "17.0.39",
-    "@types/react-dom": "17.0.13",
-    "@types/react-router-dom": "^5.3.3",
-    "babel-loader": "8.2.3",
-    "html-webpack-plugin": "5.5.0",
-    "serve": "13.0.2",
-    "typescript": "4.3.5",
-    "webpack": "5.69.1",
-    "webpack-cli": "4.9.2",
-    "webpack-dev-server": "4.7.4"
-  },
   "scripts": {
     "start": "webpack-cli serve",
     "build": "webpack --mode production",
     "serve": "serve dist -p 3001",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "eslint": "eslint --ext js,ts,tsx",
+    "lint": "yarn run eslint --fix src",
+    "format": "yarn prettier --check \"**/*.{ts,tsx,yml,html,css,json,md}\"",
+    "test": "react-scripts test",
+    "test:coverage": "yarn run test --watchAll=false --coverage --passWithNoTests"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run eslint --fix"
+    ],
+    "*.{md,json}": [
+      "yarn prettier --check \"**/*.{ts,tsx,yml,html,css,json,md}\""
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*/*.d.ts",
+      "!src/**/*/Loadable.{js,jsx,ts,tsx}",
+      "!src/**/*/messages.ts",
+      "!src/reportWebVitals.ts",
+      "!src/**/*/types.ts",
+      "!src/index.tsx"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",
@@ -33,5 +42,45 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.1.2",
     "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.17.5",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-conventional": "13.1.0",
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
+    "@types/jest": "27.4.0",
+    "@types/react": "17.0.39",
+    "@types/react-dom": "17.0.13",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-test-renderer": "17.0.1",
+    "@types/testing-library__jest-dom": "5.14.2",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "babel-loader": "8.2.3",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "html-webpack-plugin": "5.5.0",
+    "husky": "7.0.4",
+    "jest-styled-components": "7.0.8",
+    "lint-staged": "12.1.7",
+    "prettier": "2.5.1",
+    "react-scripts": "^5.0.0",
+    "serve": "13.0.2",
+    "ts-jest": "27.1.3",
+    "typescript": "4.3.5",
+    "webpack": "5.69.1",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.7.4"
   }
 }

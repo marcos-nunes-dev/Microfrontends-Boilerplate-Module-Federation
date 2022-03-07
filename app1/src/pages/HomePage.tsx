@@ -14,7 +14,9 @@ const HomePage = () => (
     <h2>Welcome to the future!</h2>
     <p>
       <em>a page being provided by App 1</em>
-      <Button color="primary" variant="contained">Hello World</Button>
+      <Button color="primary" variant="contained">
+        Hello World
+      </Button>
     </p>
   </div>
 );
