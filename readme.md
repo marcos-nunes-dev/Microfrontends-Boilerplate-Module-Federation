@@ -1,114 +1,101 @@
-
 <div align="center">
-    <img src="#" width="300px" />
-    <h1><b>Module Federation Boilerplatea</b></h1>
+    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9vbm1TI7--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/indepth-dev/image/fetch/w_1000%2Cf_auto/https://admin.indepth.dev/content/images/2020/03/externalImport.png" width="600px" />
+    <h1><b>Complete Module Federation Boilerplate</b></h1><h2>Cypress, jest, testing library, MUI 5, styled-components, Husky and others.</h2>
 </div>
 
+<br/>
 
-# Info
+# IMPORTANT!
 
-<center> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center>
+just use `app1` as a template. `app2` is in this repository for presentation purposes only. The Boilerplate and all its respective settings are only inside `app1`.
 
+<br/>
 
-## Quer Contribuir com o projeto? :open_hands:
+## What is Module Federation?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [Contribution.md](#####)
+It is basically a JavaScript architecture. It allows a JavaScript application to dynamically load code from another application (a different Webpack build).
 
-## Instalação :smiley_cat:
+##
 
-Primeiro tenha certeza que você tem instado o [Yarn](https://yarnpkg.com) instalado em seu computador.
+## Getting Start
 
-Em seguida navegue até a pasta app1 e app2:
+Run the following commands in your terminal
 
-    yarn
-
-Para instalar as dependências e em seguida (em cada uma das pastas):
-
-    yarn start
-
-## Reporte um bug :shit:
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
-## Contribuidores ✨
-
-As pessoas que estão fazendo esse projeto existir!
-
-<table>
-  <tr>
-    <td align="center">
-        <a href="https://github.com/marcos-nunes-dev">
-            <img src="https://avatars.githubusercontent.com/u/4360587?v=4" width="100px;" alt=""/>
-            <br />
-            <sub><b>Marcos Nunes</b></sub>
-        </a>
-        <br />
-        <a href="https://github.com/GrowRoadmap/grow-app-front/commits?author=marcos-nunes-dev" title="Code">
-            💻
-        </a>
-        <a href="#" title="Ideas, Planning, & Feedback">
-            🤔
-        </a>
-        <a href="https://github.com/GrowRoadmap/grow-app-front/commits?author=marcos-nunes-dev" title="Documentation">
-            📖
-        </a>
-        <a href="https://github.com/GrowRoadmap/grow-app-front/pulls?q=is%3Apr+reviewed-by%3marcos-nunes-dev" title="Reviewed Pull Requests">
-            👀
-        </a>
-        <a href="https://github.com/GrowRoadmap/grow-app-front/issues?q=author%3marcos-nunes-dev" title="Bug reports">
-            🐛
-        </a>
-    </td>   
-    <td align="center">
-        <a href="https://github.com/GustavoStraub">
-            <img src="https://avatars.githubusercontent.com/u/49662792?v=4" width="100px;" alt=""/>
-            <br />
-            <sub><b>Gustavo Straub</b></sub>
-        </a>
-        <br />
-        <a href="https://github.com/GrowRoadmap/grow-app-front/commits?author=GustavoStraub" title="Code">
-            💻
-        </a>
-        <a href="#" title="Ideas, Planning, & Feedback">
-            🤔
-        </a>
-        <a href="https://github.com/GrowRoadmap/grow-app-front/commits?author=GustavoStraub" title="Documentation">
-            📖
-        </a>
-        <a href="https://github.com/GrowRoadmap/grow-app-front/pulls?q=is%3Apr+reviewed-by%3GustavoStraub" title="Reviewed Pull Requests">
-            👀
-        </a>
-        <a href="https://github.com/GrowRoadmap/grow-app-front/issues?q=author%3GustavoStraub" title="Bug reports">
-            🐛
-        </a>
-    </td>    
-  </tr>
-</table>
-
-# Informações Importantes
-
-- For each exposed element we need to create a new `.d.ts` file with the given references like following the example: 
+```sh
+yarn
 ```
-# app1.d.ts
-/// <reference  types="react" />
 
-declare  module  "app1/routes" {
-  const  routes:  any;
-  export  default  routes;
-}
- 
-declare  module  "app1/Navigation" {
-  const  Navigation:  any;
-  export  default  Navigation;
-}
+To start the development:
+
+```sh
+yarn start
+```
+
+some others commands
+
+```sh
+yarn build //production webpack build
+yarn serve //deploy to local dist folder
+yarn lint //eslint
+yarn checkTs //typecheck
+yarn test // unit tests
+yarn cy:open // opens cypress
+yarn cy:test // e2e tests
+```
+
+<br/>
+
+# Important Informations
+
+- For each exposed remote we need to create a new `.d.ts` file with the given references like following the example:
 
 ```
-- For now, we should avoid change peer dependencies versions (react, react-dom ...)
+app1\src\app1.d.ts
+```
 
+- For now, you should avoid use different peer dependencies versions (react, react-dom ...)
+- To use Global state management it is recommended to use zustang for ease of communication in the micro frontends framework. You can follow the example in:
 
-# MUI Observations
--  Global CSS are NOT shared inside the docs for example Roboto font from MUI
-- Theme Provider will affect ONLY LOCAL APPLICATION (we can create a lib for theme overwriting).
+```
+app1\src\contexts\demoContext.tsx
+```
+
+## MUI Observations
+
+- Global CSS are NOT shared inside the docs for example Roboto font from MUI
+- Theme Provider will affect ONLY LOCAL APPLICATION. If you want to use the ThemeProvider
+  to override elements CSS you need to use the HOC inside the component that are being exposed.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
+# Important Files
+
+| relative Path                          | Description                                                                                                                    |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| app1\webpack.config.js                 | All entrypoint settings are within this file see the comments in the file for more information.                                |
+| app1\.cypress                          | cypress folder where the e2e test and local installation settings are located.                                                 |
+| app1\.husky                            | pre commit hooks                                                                                                               |
+| app1\src\config\routes.tsx             | LOCAL route settings.                                                                                                          |
+| app1\src\contexts\demoContext.tsx      | Zustang stores for context                                                                                                     |
+| app1\src\routes                        | File where app2's local and remote routes are merged.documentation                                                             |
+| app1\src\styles\theme\index.ts         | MUI style overwrite file                                                                                                       |
+| app1\src\templates\CommonProviders.tsx | If you want to use the MUI style override you must use this context within the exposed component so that the style is applied. |
+
+## Material de Apoio
+
+https://github.com/module-federation/module-federation-examples
+
+## Should I worry about exposing stores and traffic contexts between micro frontends?
+
+First, Module Federation shares code, that's all. Not the state of the code, just the code. Think of it like NPM. Importing the mongodb module from NPM doesn't connect you to Mongo, you still have to run it.
+
+There is no magic state sharing in Module Federation, to share state you have to use any of the traditional methods available to you in the web world (REST, Firebase, WebSockets, etc.) And doing that is entirely on you.
+
+Second, Module Federation doesn't know anything about your code or how it's properly used. It shares code, that's it. If you import an Angular component into your React app and try and us it, it will blow up.
+
+So, in the case of the state based security risk, it's not a problem because Module Federation isn't doing any state sharing. And Module Federation presents no more of a security risk than bundle splitting because it is just fancy bundle splitting.
+
+As for the context question, if your React component require context you gotta give them context. Module Federation doesn't know anything about your code and isn't going to magically smooth over these requirements. It just shares code.
+
+As for communication between MFEs, that's more of an architectural question. IMHO, you should share as little as you can between MFEs. Ideally just basic user identity and the JWT.

@@ -35,15 +35,21 @@ module.exports = {
       name: "app1",
       filename: "remoteEntry.js",
       remotes: {
+        // adding itself as a remote to consume the store and leave it exposed.
         app1: "app1@http://localhost:3001/remoteEntry.js",
+        // here you must put the entry point routes for all other micro frontends.
         app2: "app2@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
+        // Here you must place all components, hooks, stores
+        // and etc that will be exposed to other micro frontends.
         "./Navigation": "./src/components/Navigation",
         "./routes": "./src/config/routes",
         "./demoContext": "./src/contexts/demoContext",
       },
       shared: {
+        // The module federation handles the resolution of modules so
+        // that the same package is not processed several times.
         ...deps,
         react: {
           eager: true,
