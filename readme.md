@@ -82,7 +82,7 @@ app1\src\contexts\demoContext.tsx
 | app1\src\styles\theme\index.ts         | MUI style overwrite file                                                                                                       |
 | app1\src\templates\CommonProviders.tsx | If you want to use the MUI style override you must use this context within the exposed component so that the style is applied. |
 
-## Material de Apoio
+## Support material
 
 https://github.com/module-federation/module-federation-examples
 
