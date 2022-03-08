@@ -4,7 +4,7 @@ import * as S from "./styles";
 
 const Navigation = () => (
   <S.Wrapper>
-    <Link to="/">Home</Link> - <Link to="/about">About</Link>
+    <Link to="/">Home</Link> - <Link to="/edit">Edit</Link> - <Link to="/about">About</Link>
   </S.Wrapper>
 );
 

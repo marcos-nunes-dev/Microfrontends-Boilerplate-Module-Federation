@@ -35,11 +35,13 @@ module.exports = {
       name: "app1",
       filename: "remoteEntry.js",
       remotes: {
+        app1: "app1@http://localhost:3001/remoteEntry.js",
         app2: "app2@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
         "./Navigation": "./src/components/Navigation",
         "./routes": "./src/config/routes",
+        "./demoContext": "./src/contexts/demoContext",
       },
       shared: {
         ...deps,

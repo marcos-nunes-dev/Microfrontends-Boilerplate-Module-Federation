@@ -1,7 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import styled from "styled-components";
 import CommonProviders from "../templates/CommonProviders";
+import useStore from "app1/demoContext";
 
 const style = {
   height: 400,
@@ -10,26 +10,24 @@ const style = {
   padding: 12,
 };
 
-const TestWrapper = styled.div`
-  background: yellow;
-  padding: 10px;
-`;
+const HomePage = () => {
+  const { count, increment } = useStore();
 
-const HomePage = () => (
-  <CommonProviders>
-    <div style={style}>
-      <h1>Home Page</h1>
-      <h2>Welcome to the future!</h2>
-      <p>
-        <em>a page being provided by App 1</em>
-        <TestWrapper>
-          <Button color="primary" variant="contained">
+  return (
+    <CommonProviders>
+      <div style={style}>
+        <h1>Home Page</h1>
+        <h2>Welcome to the future!</h2>
+        <p>
+          <em>a page being provided by App 1</em>
+          {count}
+          <Button color="primary" variant="contained" onClick={increment}>
             Hello World
           </Button>
-        </TestWrapper>
-      </p>
-    </div>
-  </CommonProviders>
-);
+        </p>
+      </div>
+    </CommonProviders>
+  );
+};
 
 export default HomePage;
