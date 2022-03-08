@@ -1,6 +1,6 @@
 <div align="center">
     <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9vbm1TI7--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/indepth-dev/image/fetch/w_1000%2Cf_auto/https://admin.indepth.dev/content/images/2020/03/externalImport.png" width="600px" />
-    <h1><b>Complete Module Federation Boilerplate</b></h1><h2>Cypress, jest, testing library, MUI 5, styled-components, Husky and others.</h2>
+    <h1><b>Complete Module Federation Boilerplate</b></h1><h2>Cypress, jest, testing library, MUI 5, styled-components, Husky, Zustand and others.</h2>
 </div>
 
 <br/>
