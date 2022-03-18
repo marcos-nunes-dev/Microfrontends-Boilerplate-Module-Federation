@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 const HomePage = React.lazy(() => import("../pages/HomePage"));
 const EditPage = React.lazy(() => import("../pages/EditPage"));

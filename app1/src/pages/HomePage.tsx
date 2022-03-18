@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Button from "@mui/material/Button";
 import CommonProviders from "../templates/CommonProviders";
 import useStore from "app1/demoContext";

@@ -10,7 +10,8 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "incremental": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "esModuleInterop": true,
   },
   "exclude": ["node_modules"]
 }
